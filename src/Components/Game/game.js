@@ -106,12 +106,12 @@ return (
   <>
     
       <div className = "score-info ">
-        <div className = "total-score ">Your Score is: { score }</div>
+        <div className = "total-score ">Total Score: { score }</div>
         <div className = "restart-button">
           <button className="restart-button" onClick={restartGame}>⭯</button>  
           {/* < FaRedo /> */}
         </div> 
-        <div className = "total-games">Total Games is: { totalGames }</div>
+        <div className = "total-games">Total Rounds: { totalGames }</div>
       </div>
     
       <div className = "meaning">

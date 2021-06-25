@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import './styles.css'
+import { Container } from "react-bootstrap";
+import { FaRedo } from "react-icons/fa"
 
 export const Game = () => {
   const colors = ['red', 'blue', 'green', 'yellow', 'black', 'orange']
@@ -65,6 +68,10 @@ export const Game = () => {
     setTotalGames(totalGames = totalGames + 1)
   }
 
+  const restartGame = () => {
+    window.location.reload();
+  }
+
 //  const startGame = () => { 
     console.log("Game started")
     if (getRandomNumber(1, 100) > 70) {
@@ -97,18 +104,26 @@ export const Game = () => {
 
 return ( 
   <>
-    <div>Your Score is { score }</div>
-    <div>Total Games is { totalGames }</div>
-    <div className = "meaning">
-      <h1 style = { topWordColor } > { topWord.toUpperCase() } </h1> 
-    </div>
-    <div className = "color">
-      <h1 style = { bottomWordColor }> { bottomWord.toUpperCase() } </h1> 
-    </div> 
-    <br></br> 
-    <button className="yes-button" onClick={assertIfCorrect}>YES</button> 
-    <button className="no-button" onClick={assertIfIncorrect}>NO</button> 
-    </>
+    
+      <div className = "score-info ">
+        <div className = "total-score ">Your Score is: { score }</div>
+        <div className = "restart-button">
+          <button className="restart-button" onClick={restartGame}>⭯</button>  
+          {/* < FaRedo /> */}
+        </div> 
+        <div className = "total-games">Total Games is: { totalGames }</div>
+      </div>
+    
+      <div className = "meaning">
+        <h1 style = { topWordColor } > { topWord.toUpperCase() } </h1> 
+      </div>
+      <div className = "color">
+        <h1 style = { bottomWordColor }> { bottomWord.toUpperCase() } </h1> 
+      </div> 
+      <br></br> 
+      <button className="yes-button" onClick={assertIfCorrect}>YES</button> 
+      <button className="no-button" onClick={assertIfIncorrect}>NO</button> 
+  </>
 )
 
 }
